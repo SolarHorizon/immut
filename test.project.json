@@ -1,0 +1,11 @@
+{
+  "name": "immut-test",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Immut": {
+        "$path": "default.project.json"
+      }
+    }
+  }
+}
