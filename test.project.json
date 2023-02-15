@@ -5,7 +5,13 @@
     "ReplicatedStorage": {
       "Immut": {
         "$path": "default.project.json"
+      },
+      "Packages": {
+        "$path": { "optional": "benchmark/Packages" }
       }
+    },
+    "ServerStorage": {
+      "$path": { "optional": "benchmark/bench" }
     }
   }
 }

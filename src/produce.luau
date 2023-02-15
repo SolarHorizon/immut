@@ -1,16 +1,25 @@
 --!strict
-local draft = require(script.Parent.draft)
+local Draft = require(script.Parent.Draft)
+local finishDraft = require(script.Parent.finishDraft)
+local isDraft = require(script.Parent.isDraft)
 
-type AnyTable = { [any]: any }
-type Draft<T> = typeof(draft.createDraft({} :: T & AnyTable))
-type Recipe<T> = (draft: Draft<T>) -> any?
+-- i've tried two type definitions for recipes, neither of which are that great.
 
-local function produce<T>(base: AnyTable, recipe: Recipe<T>): any
-	local proxy = draft.createDraft(base)
-	local nextValue = recipe(proxy) or proxy
+-- when using this type, autocompletion for `draft` stops working
+-- type Recipe<T> = ((draft: T) -> ()) | ((draft: T) -> T) | ((draft: T) -> nil)
 
-	if draft.isDraft(nextValue) then
-		nextValue = draft.finalizeDraft(nextValue)
+-- when using this type, recipes will always need to explicitly return something.
+-- `draft` autocompletion works though, so i think this is better, but not ideal.
+type Recipe<T> = (draft: T) -> T?
+
+local function produce<T>(base: T, recipe: Recipe<T>): T
+	local proxy = Draft.new(base) :: T
+
+	-- https://discord.com/channels/385151591524597761/402843211707449354/997898224075550760
+	local nextValue = ((recipe :: any)(proxy) or proxy) :: T
+
+	if isDraft(nextValue) then
+		nextValue = finishDraft(nextValue)
 	end
 
 	return nextValue

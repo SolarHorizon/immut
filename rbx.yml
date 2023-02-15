@@ -1,2 +1,5 @@
-testRoots:
-  - ReplicatedStorage.Immut
+run:
+  default: test
+test:
+  roots:
+    - ReplicatedStorage.Immut
