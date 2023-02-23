@@ -2,4 +2,4 @@ run:
   default: test
 test:
   roots:
-    - ReplicatedStorage.Immut
+    - ReplicatedStorage.Packages.Immut
