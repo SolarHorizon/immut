@@ -30,7 +30,7 @@ local inventory = {
 
 ### Manually
 
-We can opt do this ourselves by using `table.clone`, but we will need to be
+We can opt to do this ourselves by using `table.clone`, but we will need to be
 careful and make sure that we clone any table we intend to make changes to.
 This gets more and more difficult the deeper your state is nested.
 
@@ -125,7 +125,7 @@ it doesn't need to.
 
 - Nested tables are automatically turned into drafts. This can be convenient
   when dealing with nested state, like in our example above, but may not always
-  be what you want. To rememedy this, you can opt out of using a draft with
+  be what you want. To remedy this, you can opt out of using a draft with
   `Immut.original`.
 
 - Luau's `table` library does not respect metatables. If you want to use
