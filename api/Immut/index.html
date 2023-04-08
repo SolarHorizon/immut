@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v2.3.1">
 <title data-rh="true">Immut | Immut</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://SolarHorizon.github.io/immut/api/Immut"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Immut | Immut"><meta data-rh="true" name="description" content="An immutable data library based on Immer.js"><meta data-rh="true" property="og:description" content="An immutable data library based on Immer.js"><link data-rh="true" rel="canonical" href="https://SolarHorizon.github.io/immut/api/Immut"><link data-rh="true" rel="alternate" href="https://SolarHorizon.github.io/immut/api/Immut" hreflang="en"><link data-rh="true" rel="alternate" href="https://SolarHorizon.github.io/immut/api/Immut" hreflang="x-default"><link rel="stylesheet" href="/immut/assets/css/styles.9b3dbd17.css">
-<link rel="preload" href="/immut/assets/js/runtime~main.a2b2d1fe.js" as="script">
-<link rel="preload" href="/immut/assets/js/main.456ceca3.js" as="script">
+<link rel="preload" href="/immut/assets/js/runtime~main.7227f8ee.js" as="script">
+<link rel="preload" href="/immut/assets/js/main.78b5808b.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -33,9 +33,9 @@
 <p>Create a new draft from the given table.</p>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="isDraft"><code style="text-decoration:none">isDraft</code><a href="#isDraft" class="hash-link" aria-label="Direct link to isDraft" title="Direct link to isDraft">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/isDraft.luau#L8"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">isDraft</code><code>(</code><code>value<!-- -->: </code><code class="blue_P4bS">any</code><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
 <p>Checks if the given value is a draft.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="produce"><code style="text-decoration:none">produce</code><a href="#produce" class="hash-link" aria-label="Direct link to produce" title="Direct link to produce">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/produce.luau#L47"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">produce</code><code>(</code><div class="inset_uKQm"><div><code>base<!-- -->: </code><code class="blue_P4bS">table</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="produce"><code style="text-decoration:none">produce</code><a href="#produce" class="hash-link" aria-label="Direct link to produce" title="Direct link to produce">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/produce.luau#L56"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">produce</code><code>(</code><div class="inset_uKQm"><div><code>base<!-- -->: </code><code class="blue_P4bS">table</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>any table, so long as it doesn't have a metatable</p>
-</span></span></div><div><code>recipe<!-- -->: </code><code class="purple_ieR2">(</code><code>draft<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">table</code></div></div><code>) → </code><code class="blue_P4bS">T</code></div><div>
+</span></span></div><div><code>recipe<!-- -->: </code><code class="purple_ieR2">(</code><code>draft<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">any?</code></div></div><code>) → </code><code class="blue_P4bS">T</code></div><div>
 <p>
   The primary way to use Immut. Takes a table and a recipe function which is
   passed a draft that can be mutated, producing a new table with those changes
@@ -59,6 +59,14 @@
 	<span class="token punctuation">}</span>
 
 	draft<span class="token punctuation">.</span>pets<span class="token punctuation">.</span>mittens<span class="token punctuation">.</span>mood <span class="token operator">=</span> <span class="token string">"happy"</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span>
+</code></pre>
+<p>
+  Recipe functions do not need to return anything. When they do, the returned
+  value will be used instead of the draft.
+</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> newState <span class="token operator">=</span> <span class="token function">produce</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>draft<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">-- newState becomes an empty table</span>
 <span class="token keyword">end</span><span class="token punctuation">)</span>
 </code></pre>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="remove"><code style="text-decoration:none">remove</code><a href="#remove" class="hash-link" aria-label="Direct link to remove" title="Direct link to remove">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/table/remove.luau#L10"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">remove</code><code>(</code><div class="inset_uKQm"><div><code>draft<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">V</code><code class="purple_ieR2">}</code><code>,</code></div><div><code>number<!-- -->: </code><code class="blue_P4bS">number?</code></div></div><code>) → </code><code class="blue_P4bS">V?</code></div><div>
@@ -155,7 +163,7 @@
         },
         {
             &quot;name&quot;: &quot;produce&quot;,
-            &quot;desc&quot;: &quot;The primary way to use Immut. Takes a table and a recipe function which is\npassed a draft that can be mutated, producing a new table with those changes\nmade to it.\n\n### Examples\n\n```lua\nlocal state = {\n\tpets = {\n\t\tmittens = {\n\t\t\ttype = \&quot;cat\&quot;,\n\t\t\tmood = \&quot;lonely\&quot;,\n\t\t},\n\t}\n}\n\n-- mittens is lonely. let&#x27;s get her a friend\nlocal newState = produce(state, function(draft)\n\tdraft.pets.spot = {\n\t\ttype = \&quot;dog\&quot;,\n\t\tmood = \&quot;curious\&quot;,\n\t}\n\n\tdraft.pets.mittens.mood = \&quot;happy\&quot;\nend)\n```&quot;,
+            &quot;desc&quot;: &quot;The primary way to use Immut. Takes a table and a recipe function which is\npassed a draft that can be mutated, producing a new table with those changes\nmade to it.\n\n### Examples\n\n```lua\nlocal state = {\n\tpets = {\n\t\tmittens = {\n\t\t\ttype = \&quot;cat\&quot;,\n\t\t\tmood = \&quot;lonely\&quot;,\n\t\t},\n\t}\n}\n\n-- mittens is lonely. let&#x27;s get her a friend\nlocal newState = produce(state, function(draft)\n\tdraft.pets.spot = {\n\t\ttype = \&quot;dog\&quot;,\n\t\tmood = \&quot;curious\&quot;,\n\t}\n\n\tdraft.pets.mittens.mood = \&quot;happy\&quot;\nend)\n```\n\nRecipe functions do not need to return anything. When they do, the returned\nvalue will be used instead of the draft.\n\n```lua\nlocal newState = produce(state, function(draft)\n\treturn {} -- newState becomes an empty table\nend)\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;base&quot;,
@@ -165,7 +173,7 @@
                 {
                     &quot;name&quot;: &quot;recipe&quot;,
                     &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;(draft: Draft) -&gt; table&quot;
+                    &quot;lua_type&quot;: &quot;(draft: Draft) -&gt; any?&quot;
                 }
             ],
             &quot;returns&quot;: [
@@ -176,7 +184,7 @@
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 47,
+                &quot;line&quot;: 56,
                 &quot;path&quot;: &quot;src/produce.luau&quot;
             }
         },
@@ -283,7 +291,7 @@
         &quot;path&quot;: &quot;src/init.luau&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#createDraft" class="table-of-contents__link toc-highlight">.createDraft</a></li><li><a href="#finishDraft" class="table-of-contents__link toc-highlight">.finishDraft</a></li><li><a href="#insert" class="table-of-contents__link toc-highlight">.insert</a></li><li><a href="#isDraft" class="table-of-contents__link toc-highlight">.isDraft</a></li><li><a href="#isDraftable" class="table-of-contents__link toc-highlight">.isDraftable</a></li><li><a href="#original" class="table-of-contents__link toc-highlight">.original</a></li><li><a href="#produce" class="table-of-contents__link toc-highlight">.produce</a></li><li><a href="#remove" class="table-of-contents__link toc-highlight">.remove</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 SolarHorizon. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/immut/assets/js/runtime~main.a2b2d1fe.js"></script>
-<script src="/immut/assets/js/main.456ceca3.js"></script>
+<script src="/immut/assets/js/runtime~main.7227f8ee.js"></script>
+<script src="/immut/assets/js/main.78b5808b.js"></script>
 </body>
 </html>
