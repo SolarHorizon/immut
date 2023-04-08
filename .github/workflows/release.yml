@@ -19,7 +19,8 @@ jobs:
         run: |
           mkdir -p ~/.wally
           echo "$WALLY_AUTH" > ~/.wally/auth.toml
-          wally publish
+          echo "skip wally publish step..."
+          # wally publish
         env:
           WALLY_AUTH: ${{ secrets.WALLY_AUTH }}
 
@@ -28,8 +29,15 @@ jobs:
           wally install
           rojo build -o Immut.rbxm
 
-      - name: Release
+      - id: get_version
+        run: echo name="VERSION::${GITHUB_REF#refs/tags/}" >> "${GITHUB_OUTPUT}"
+
+      - run: lune changelog CHANGELOG.md > latest.md
+
+      - name: Create release
         uses: softprops/action-gh-release@v1
         with:
+          name: ${{ steps.get_version.outputs.VERSION }}
+          body_path: latest.md
           fail_on_unmatched_files: true
           files: Immut.rbxm
