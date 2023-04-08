@@ -1,0 +1,6 @@
+title = "Immut"
+classOrder = ["Immut"]
+
+[home]
+enabled = false
+includeReadme = false
