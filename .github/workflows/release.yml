@@ -19,8 +19,7 @@ jobs:
         run: |
           mkdir -p ~/.wally
           echo "$WALLY_AUTH" > ~/.wally/auth.toml
-          echo "skip wally publish step..."
-          # wally publish
+          wally publish
         env:
           WALLY_AUTH: ${{ secrets.WALLY_AUTH }}
 
