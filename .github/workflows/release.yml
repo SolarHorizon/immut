@@ -29,10 +29,12 @@ jobs:
           wally install
           rojo build -o Immut.rbxm
 
-      - id: get_version
+      - name: Get version
+        id: get_version
         run: echo name="VERSION::${GITHUB_REF#refs/tags/}" >> "${GITHUB_OUTPUT}"
 
-      - run: lune changelog CHANGELOG.md > latest.md
+      - name: Generate changelog
+        run: lune changelog CHANGELOG.md > latest.md
 
       - name: Create release
         uses: softprops/action-gh-release@v1

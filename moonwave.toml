@@ -3,4 +3,4 @@ classOrder = ["Immut"]
 
 [home]
 enabled = false
-includeReadme = false
+includeReadme = true
