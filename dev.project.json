@@ -3,11 +3,11 @@
   "tree": {
     "$className": "DataModel",
     "ReplicatedStorage": {
-      "Immut": {
-        "$path": "default.project.json"
-      },
       "Packages": {
-        "$path": { "optional": "benchmark/Packages" }
+        "$path": { "optional": "benchmark/Packages" },
+        "Immut": {
+          "$path": "default.project.json"
+        }
       }
     },
     "ServerStorage": {
