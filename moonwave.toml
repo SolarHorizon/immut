@@ -2,5 +2,5 @@ title = "Immut"
 classOrder = ["Immut"]
 
 [home]
-enabled = false
-includeReadme = true
+enabled = true
+includeReadme = false
