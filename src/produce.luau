@@ -15,7 +15,7 @@ type Recipe<T> = (draft: T) -> T?
 --[=[
 	@within Immut
 	@param base table -- any table, so long as it doesn't have a metatable
-	@param recipe (draft: Draft) -> table
+	@param recipe (draft: Draft) -> any?
 
 	The primary way to use Immut. Takes a table and a recipe function which is
 	passed a draft that can be mutated, producing a new table with those changes
@@ -41,6 +41,15 @@ type Recipe<T> = (draft: T) -> T?
 		}
 
 		draft.pets.mittens.mood = "happy"
+	end)
+	```
+
+	Recipe functions do not need to return anything. When they do, the returned
+	value will be used instead of the draft.
+
+	```lua
+	local newState = produce(state, function(draft)
+		return {} -- newState becomes an empty table
 	end)
 	```
 ]=]
