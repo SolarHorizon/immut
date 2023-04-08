@@ -124,4 +124,13 @@ return function()
 		expect(draft.a).to.never.be.ok()
 		expect(original.a).to.be.ok()
 	end)
+
+	it("should support the __len metamethod", function()
+		local original = { "foo", "bar", "baz" }
+
+		local draft = Draft.new(original)
+
+		expect(#draft).to.equal(3)
+		expect(#original).to.equal(3)
+	end)
 end
