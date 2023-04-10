@@ -6,6 +6,16 @@ local CLONE = constants.CLONE
 
 --[=[
 	@within Immut
+	@function current
+	@param draft Draft
+	@return table
+
+	Returns a snapshot of the current state of a draft. This can be expensive,
+	so use it sparingly.
+]=]
+
+--[=[
+	@within Immut
 	@param draft Draft
 	@return table
 
