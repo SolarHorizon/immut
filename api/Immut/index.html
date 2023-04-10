@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v2.3.1">
 <title data-rh="true">Immut | Immut</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://SolarHorizon.github.io/immut/api/Immut"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Immut | Immut"><meta data-rh="true" name="description" content="An immutable data library based on Immer.js"><meta data-rh="true" property="og:description" content="An immutable data library based on Immer.js"><link data-rh="true" rel="canonical" href="https://SolarHorizon.github.io/immut/api/Immut"><link data-rh="true" rel="alternate" href="https://SolarHorizon.github.io/immut/api/Immut" hreflang="en"><link data-rh="true" rel="alternate" href="https://SolarHorizon.github.io/immut/api/Immut" hreflang="x-default"><link rel="stylesheet" href="/immut/assets/css/styles.9b3dbd17.css">
-<link rel="preload" href="/immut/assets/js/runtime~main.258a01c3.js" as="script">
-<link rel="preload" href="/immut/assets/js/main.72a81946.js" as="script">
+<link rel="preload" href="/immut/assets/js/runtime~main.d6bb6f20.js" as="script">
+<link rel="preload" href="/immut/assets/js/main.8d0adea9.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -73,7 +73,12 @@
 <p>Draft-safe replacement for <code>table.remove</code></p>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="insert"><code style="text-decoration:none">insert</code><a href="#insert" class="hash-link" aria-label="Direct link to insert" title="Direct link to insert">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/table/insert.luau#L10"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">insert</code><code>(</code><div class="inset_uKQm"><div><code>draft<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">V</code><code class="purple_ieR2">}</code><code>,</code></div><div><code>pos<!-- -->: </code><code class="blue_P4bS">number</code><code class="op_lSLc"> | </code><code class="blue_P4bS">V</code><code>,</code></div><div><code>value<!-- -->: </code><code class="blue_P4bS">V?</code></div></div><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Draft-safe replacement for <code>table.insert</code></p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="finishDraft"><code style="text-decoration:none">finishDraft</code><a href="#finishDraft" class="hash-link" aria-label="Direct link to finishDraft" title="Direct link to finishDraft">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/finishDraft.luau#L19"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">finishDraft</code><code>(</code><code>draft<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code><code>) → </code><code class="blue_P4bS">table</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="current"><code style="text-decoration:none">current</code><a href="#current" class="hash-link" aria-label="Direct link to current" title="Direct link to current">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/finishDraft.luau#L16"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">current</code><code>(</code><code>draft<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code><code>) → </code><code class="blue_P4bS">table</code></div><div>
+<p>
+  Returns a snapshot of the current state of a draft. This can be expensive,
+  so use it sparingly.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="finishDraft"><code style="text-decoration:none">finishDraft</code><a href="#finishDraft" class="hash-link" aria-label="Direct link to finishDraft" title="Direct link to finishDraft">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/finishDraft.luau#L29"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">finishDraft</code><code>(</code><code>draft<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code><code>) → </code><code class="blue_P4bS">table</code></div><div>
 <div class="admonition admonition-tip alert alert--success">
   <div class="admonition-heading">
     <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
@@ -243,6 +248,28 @@
             }
         },
         {
+            &quot;name&quot;: &quot;current&quot;,
+            &quot;desc&quot;: &quot;Returns a snapshot of the current state of a draft. This can be expensive,\nso use it sparingly.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;draft&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Draft&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;table&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 16,
+                &quot;path&quot;: &quot;src/finishDraft.luau&quot;
+            }
+        },
+        {
             &quot;name&quot;: &quot;finishDraft&quot;,
             &quot;desc&quot;: &quot;:::tip\nIt&#x27;s unlikely you&#x27;ll need to use this unless you have a very specific use\ncase. Try using `produce` instead!\n:::\n\nFinalize a draft.&quot;,
             &quot;params&quot;: [
@@ -260,7 +287,7 @@
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 19,
+                &quot;line&quot;: 29,
                 &quot;path&quot;: &quot;src/finishDraft.luau&quot;
             }
         },
@@ -290,8 +317,8 @@
         &quot;line&quot;: 6,
         &quot;path&quot;: &quot;src/init.luau&quot;
     }
-}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#createDraft" class="table-of-contents__link toc-highlight">.createDraft</a></li><li><a href="#finishDraft" class="table-of-contents__link toc-highlight">.finishDraft</a></li><li><a href="#insert" class="table-of-contents__link toc-highlight">.insert</a></li><li><a href="#isDraft" class="table-of-contents__link toc-highlight">.isDraft</a></li><li><a href="#isDraftable" class="table-of-contents__link toc-highlight">.isDraftable</a></li><li><a href="#original" class="table-of-contents__link toc-highlight">.original</a></li><li><a href="#produce" class="table-of-contents__link toc-highlight">.produce</a></li><li><a href="#remove" class="table-of-contents__link toc-highlight">.remove</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 SolarHorizon. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/immut/assets/js/runtime~main.258a01c3.js"></script>
-<script src="/immut/assets/js/main.72a81946.js"></script>
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#createDraft" class="table-of-contents__link toc-highlight">.createDraft</a></li><li><a href="#current" class="table-of-contents__link toc-highlight">.current</a></li><li><a href="#finishDraft" class="table-of-contents__link toc-highlight">.finishDraft</a></li><li><a href="#insert" class="table-of-contents__link toc-highlight">.insert</a></li><li><a href="#isDraft" class="table-of-contents__link toc-highlight">.isDraft</a></li><li><a href="#isDraftable" class="table-of-contents__link toc-highlight">.isDraftable</a></li><li><a href="#original" class="table-of-contents__link toc-highlight">.original</a></li><li><a href="#produce" class="table-of-contents__link toc-highlight">.produce</a></li><li><a href="#remove" class="table-of-contents__link toc-highlight">.remove</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 SolarHorizon. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+<script src="/immut/assets/js/runtime~main.d6bb6f20.js"></script>
+<script src="/immut/assets/js/main.8d0adea9.js"></script>
 </body>
 </html>
