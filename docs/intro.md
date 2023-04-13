@@ -91,8 +91,8 @@ at all. This makes it trivial.
 local Immut = require(ReplicatedStorage.Immut)
 
 local newInventory = Immut.produce(inventory, function(draft)
-    inventory.weapons.sword.durability -= 10
-    inventory.consumables.healthPotion = {
+    draft.weapons.sword.durability -= 10
+    draft.consumables.healthPotion = {
         value = 100,
         health = 20,
     }
