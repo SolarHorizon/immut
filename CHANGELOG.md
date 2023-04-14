@@ -1,3 +1,7 @@
+## 0.3.1
+
+- Fixed `remove` causing an error when required
+
 ## 0.3.0
 
 - Added documentation
