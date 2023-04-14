@@ -10,7 +10,7 @@ local getClone = require(script.Parent.Parent.getClone)
 local function remove<V>(draft: { V }, number: number?): V?
 	assert(isDraft(draft), "Immut.remove can only be used on drafts")
 
-	local clone = getClone(draft)
+	local clone = getClone(draft :: any)
 
 	return table.remove(clone :: any, number)
 end
