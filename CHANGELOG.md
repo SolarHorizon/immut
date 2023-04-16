@@ -1,3 +1,7 @@
+## 0.3.2
+
+- `insert` will no longer error when not providing a position
+
 ## 0.3.1
 
 - Fixed `remove` causing an error when required
