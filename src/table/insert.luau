@@ -12,7 +12,11 @@ local function insert<V>(draft: { V }, pos: number | V, value: V?)
 
 	local clone = getClone(draft :: any)
 
-	return table.insert(clone :: any, pos :: any, value)
+	if value == nil then
+		return table.insert(clone :: any, pos :: any)
+	end
+
+	return table.insert(clone :: any, pos :: number, value)
 end
 
 return insert
