@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v2.3.1">
 <title data-rh="true">Immut | Immut</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://SolarHorizon.github.io/immut/api/Immut"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Immut | Immut"><meta data-rh="true" name="description" content="An immutable data library based on Immer.js"><meta data-rh="true" property="og:description" content="An immutable data library based on Immer.js"><link data-rh="true" rel="canonical" href="https://SolarHorizon.github.io/immut/api/Immut"><link data-rh="true" rel="alternate" href="https://SolarHorizon.github.io/immut/api/Immut" hreflang="en"><link data-rh="true" rel="alternate" href="https://SolarHorizon.github.io/immut/api/Immut" hreflang="x-default"><link rel="stylesheet" href="/immut/assets/css/styles.9b3dbd17.css">
-<link rel="preload" href="/immut/assets/js/runtime~main.f97740b6.js" as="script">
-<link rel="preload" href="/immut/assets/js/main.0b8aac23.js" as="script">
+<link rel="preload" href="/immut/assets/js/runtime~main.755f035d.js" as="script">
+<link rel="preload" href="/immut/assets/js/main.1275ad3e.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -16,7 +16,14 @@
   Checks if a value can be wrapped with a draft. Tables without metatables
   are the only draftable values.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="createDraft"><code style="text-decoration:none">createDraft</code><a href="#createDraft" class="hash-link" aria-label="Direct link to createDraft" title="Direct link to createDraft">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/Draft.luau#L31"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">createDraft</code><code>(</code><code>base<!-- -->: </code><code class="blue_P4bS">table</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="isDraft"><code style="text-decoration:none">isDraft</code><a href="#isDraft" class="hash-link" aria-label="Direct link to isDraft" title="Direct link to isDraft">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/isDraft.luau#L8"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">isDraft</code><code>(</code><code>value<!-- -->: </code><code class="blue_P4bS">any</code><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p>Checks if the given value is a draft.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="current"><code style="text-decoration:none">current</code><a href="#current" class="hash-link" aria-label="Direct link to current" title="Direct link to current">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/finishDraft.luau#L16"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">current</code><code>(</code><code>draft<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code><code>) → </code><code class="blue_P4bS">table</code></div><div>
+<p>
+  Returns a snapshot of the current state of a draft. This can be expensive,
+  so use it sparingly.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="finishDraft"><code style="text-decoration:none">finishDraft</code><a href="#finishDraft" class="hash-link" aria-label="Direct link to finishDraft" title="Direct link to finishDraft">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/finishDraft.luau#L29"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">finishDraft</code><code>(</code><code>draft<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code><code>) → </code><code class="blue_P4bS">table</code></div><div>
 <div class="admonition admonition-tip alert alert--success">
   <div class="admonition-heading">
     <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
@@ -30,9 +37,11 @@
     </p>
   </div>
 </div>
-<p>Create a new draft from the given table.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="isDraft"><code style="text-decoration:none">isDraft</code><a href="#isDraft" class="hash-link" aria-label="Direct link to isDraft" title="Direct link to isDraft">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/isDraft.luau#L8"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">isDraft</code><code>(</code><code>value<!-- -->: </code><code class="blue_P4bS">any</code><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
-<p>Checks if the given value is a draft.</p>
+<p>Finalize a draft.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="insert"><code style="text-decoration:none">insert</code><a href="#insert" class="hash-link" aria-label="Direct link to insert" title="Direct link to insert">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/table/insert.luau#L10"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">insert</code><code>(</code><div class="inset_uKQm"><div><code>draft<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">V</code><code class="purple_ieR2">}</code><code>,</code></div><div><code>pos<!-- -->: </code><code class="blue_P4bS">number</code><code class="op_lSLc"> | </code><code class="blue_P4bS">V</code><code>,</code></div><div><code>value<!-- -->: </code><code class="blue_P4bS">V?</code></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Draft-safe replacement for <code>table.insert</code></p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="remove"><code style="text-decoration:none">remove</code><a href="#remove" class="hash-link" aria-label="Direct link to remove" title="Direct link to remove">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/table/remove_.luau#L10"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">remove</code><code>(</code><div class="inset_uKQm"><div><code>draft<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">V</code><code class="purple_ieR2">}</code><code>,</code></div><div><code>number<!-- -->: </code><code class="blue_P4bS">number?</code></div></div><code>) → </code><code class="blue_P4bS">V?</code></div><div>
+<p>Draft-safe replacement for <code>table.remove</code></p>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="produce"><code style="text-decoration:none">produce</code><a href="#produce" class="hash-link" aria-label="Direct link to produce" title="Direct link to produce">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/produce.luau#L56"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">produce</code><code>(</code><div class="inset_uKQm"><div><code>base<!-- -->: </code><code class="blue_P4bS">table</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>any table, so long as it doesn't have a metatable</p>
 </span></span></div><div><code>recipe<!-- -->: </code><code class="purple_ieR2">(</code><code>draft<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">any?</code></div></div><code>) → </code><code class="blue_P4bS">T</code></div><div>
@@ -69,16 +78,12 @@
 	<span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">-- newState becomes an empty table</span>
 <span class="token keyword">end</span><span class="token punctuation">)</span>
 </code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="remove"><code style="text-decoration:none">remove</code><a href="#remove" class="hash-link" aria-label="Direct link to remove" title="Direct link to remove">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/table/remove_.luau#L10"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">remove</code><code>(</code><div class="inset_uKQm"><div><code>draft<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">V</code><code class="purple_ieR2">}</code><code>,</code></div><div><code>number<!-- -->: </code><code class="blue_P4bS">number?</code></div></div><code>) → </code><code class="blue_P4bS">V?</code></div><div>
-<p>Draft-safe replacement for <code>table.remove</code></p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="insert"><code style="text-decoration:none">insert</code><a href="#insert" class="hash-link" aria-label="Direct link to insert" title="Direct link to insert">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/table/insert.luau#L10"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">insert</code><code>(</code><div class="inset_uKQm"><div><code>draft<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">V</code><code class="purple_ieR2">}</code><code>,</code></div><div><code>pos<!-- -->: </code><code class="blue_P4bS">number</code><code class="op_lSLc"> | </code><code class="blue_P4bS">V</code><code>,</code></div><div><code>value<!-- -->: </code><code class="blue_P4bS">V?</code></div></div><code>) → </code><code>(</code><code>)</code></div><div>
-<p>Draft-safe replacement for <code>table.insert</code></p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="current"><code style="text-decoration:none">current</code><a href="#current" class="hash-link" aria-label="Direct link to current" title="Direct link to current">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/finishDraft.luau#L16"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">current</code><code>(</code><code>draft<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code><code>) → </code><code class="blue_P4bS">table</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="original"><code style="text-decoration:none">original</code><a href="#original" class="hash-link" aria-label="Direct link to original" title="Direct link to original">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/original.luau#L12"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">original</code><code>(</code><code>draft<!-- -->: </code><code class="blue_P4bS">T</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>
-  Returns a snapshot of the current state of a draft. This can be expensive,
-  so use it sparingly.
+  Returns the original table. You can use this to opt out of Immut for any
+  table, like in cases where it may be more performant to use another method.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="finishDraft"><code style="text-decoration:none">finishDraft</code><a href="#finishDraft" class="hash-link" aria-label="Direct link to finishDraft" title="Direct link to finishDraft">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/finishDraft.luau#L29"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">finishDraft</code><code>(</code><code>draft<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code><code>) → </code><code class="blue_P4bS">table</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="createDraft"><code style="text-decoration:none">createDraft</code><a href="#createDraft" class="hash-link" aria-label="Direct link to createDraft" title="Direct link to createDraft">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/Draft.luau#L31"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">createDraft</code><code>(</code><code>base<!-- -->: </code><code class="blue_P4bS">table</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code></div><div>
 <div class="admonition admonition-tip alert alert--success">
   <div class="admonition-heading">
     <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
@@ -92,12 +97,7 @@
     </p>
   </div>
 </div>
-<p>Finalize a draft.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="original"><code style="text-decoration:none">original</code><a href="#original" class="hash-link" aria-label="Direct link to original" title="Direct link to original">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/original.luau#L12"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">original</code><code>(</code><code>draft<!-- -->: </code><code class="blue_P4bS">T</code><code>) → </code><code>(</code><code>)</code></div><div>
-<p>
-  Returns the original table. You can use this to opt out of Immut for any
-  table, like in cases where it may be more performant to use another method.
-</p>
+<p>Create a new draft from the given table.</p>
 </div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
     &quot;functions&quot;: [
         {
@@ -123,28 +123,6 @@
             }
         },
         {
-            &quot;name&quot;: &quot;createDraft&quot;,
-            &quot;desc&quot;: &quot;:::tip\nIt&#x27;s unlikely you&#x27;ll need to use this unless you have a very specific use\ncase. Try using `produce` instead!\n:::\n\nCreate a new draft from the given table.&quot;,
-            &quot;params&quot;: [
-                {
-                    &quot;name&quot;: &quot;base&quot;,
-                    &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;table&quot;
-                }
-            ],
-            &quot;returns&quot;: [
-                {
-                    &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;Draft&quot;
-                }
-            ],
-            &quot;function_type&quot;: &quot;static&quot;,
-            &quot;source&quot;: {
-                &quot;line&quot;: 31,
-                &quot;path&quot;: &quot;src/Draft.luau&quot;
-            }
-        },
-        {
             &quot;name&quot;: &quot;isDraft&quot;,
             &quot;desc&quot;: &quot;Checks if the given value is a draft.&quot;,
             &quot;params&quot;: [
@@ -164,87 +142,6 @@
             &quot;source&quot;: {
                 &quot;line&quot;: 8,
                 &quot;path&quot;: &quot;src/isDraft.luau&quot;
-            }
-        },
-        {
-            &quot;name&quot;: &quot;produce&quot;,
-            &quot;desc&quot;: &quot;The primary way to use Immut. Takes a table and a recipe function which is\npassed a draft that can be mutated, producing a new table with those changes\nmade to it.\n\n### Examples\n\n```lua\nlocal state = {\n\tpets = {\n\t\tmittens = {\n\t\t\ttype = \&quot;cat\&quot;,\n\t\t\tmood = \&quot;lonely\&quot;,\n\t\t},\n\t}\n}\n\n-- mittens is lonely. let&#x27;s get her a friend\nlocal newState = produce(state, function(draft)\n\tdraft.pets.spot = {\n\t\ttype = \&quot;dog\&quot;,\n\t\tmood = \&quot;curious\&quot;,\n\t}\n\n\tdraft.pets.mittens.mood = \&quot;happy\&quot;\nend)\n```\n\nRecipe functions do not need to return anything. When they do, the returned\nvalue will be used instead of the draft.\n\n```lua\nlocal newState = produce(state, function(draft)\n\treturn {} -- newState becomes an empty table\nend)\n```&quot;,
-            &quot;params&quot;: [
-                {
-                    &quot;name&quot;: &quot;base&quot;,
-                    &quot;desc&quot;: &quot;any table, so long as it doesn&#x27;t have a metatable&quot;,
-                    &quot;lua_type&quot;: &quot;table&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;recipe&quot;,
-                    &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;(draft: Draft) -&gt; any?&quot;
-                }
-            ],
-            &quot;returns&quot;: [
-                {
-                    &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;T\n&quot;
-                }
-            ],
-            &quot;function_type&quot;: &quot;static&quot;,
-            &quot;source&quot;: {
-                &quot;line&quot;: 56,
-                &quot;path&quot;: &quot;src/produce.luau&quot;
-            }
-        },
-        {
-            &quot;name&quot;: &quot;remove&quot;,
-            &quot;desc&quot;: &quot;Draft-safe replacement for `table.remove`&quot;,
-            &quot;params&quot;: [
-                {
-                    &quot;name&quot;: &quot;draft&quot;,
-                    &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;{ V }&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;number&quot;,
-                    &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;number?&quot;
-                }
-            ],
-            &quot;returns&quot;: [
-                {
-                    &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;V?\n&quot;
-                }
-            ],
-            &quot;function_type&quot;: &quot;static&quot;,
-            &quot;source&quot;: {
-                &quot;line&quot;: 10,
-                &quot;path&quot;: &quot;src/table/remove_.luau&quot;
-            }
-        },
-        {
-            &quot;name&quot;: &quot;insert&quot;,
-            &quot;desc&quot;: &quot;Draft-safe replacement for `table.insert`&quot;,
-            &quot;params&quot;: [
-                {
-                    &quot;name&quot;: &quot;draft&quot;,
-                    &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;{ V }&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;pos&quot;,
-                    &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;number | V&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;value&quot;,
-                    &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;V?&quot;
-                }
-            ],
-            &quot;returns&quot;: [],
-            &quot;function_type&quot;: &quot;static&quot;,
-            &quot;source&quot;: {
-                &quot;line&quot;: 10,
-                &quot;path&quot;: &quot;src/table/insert.luau&quot;
             }
         },
         {
@@ -292,6 +189,87 @@
             }
         },
         {
+            &quot;name&quot;: &quot;insert&quot;,
+            &quot;desc&quot;: &quot;Draft-safe replacement for `table.insert`&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;draft&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;{ V }&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;pos&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;number | V&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;value&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;V?&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 10,
+                &quot;path&quot;: &quot;src/table/insert.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;remove&quot;,
+            &quot;desc&quot;: &quot;Draft-safe replacement for `table.remove`&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;draft&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;{ V }&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;number&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;number?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;V?\n&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 10,
+                &quot;path&quot;: &quot;src/table/remove_.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;produce&quot;,
+            &quot;desc&quot;: &quot;The primary way to use Immut. Takes a table and a recipe function which is\npassed a draft that can be mutated, producing a new table with those changes\nmade to it.\n\n### Examples\n\n```lua\nlocal state = {\n\tpets = {\n\t\tmittens = {\n\t\t\ttype = \&quot;cat\&quot;,\n\t\t\tmood = \&quot;lonely\&quot;,\n\t\t},\n\t}\n}\n\n-- mittens is lonely. let&#x27;s get her a friend\nlocal newState = produce(state, function(draft)\n\tdraft.pets.spot = {\n\t\ttype = \&quot;dog\&quot;,\n\t\tmood = \&quot;curious\&quot;,\n\t}\n\n\tdraft.pets.mittens.mood = \&quot;happy\&quot;\nend)\n```\n\nRecipe functions do not need to return anything. When they do, the returned\nvalue will be used instead of the draft.\n\n```lua\nlocal newState = produce(state, function(draft)\n\treturn {} -- newState becomes an empty table\nend)\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;base&quot;,
+                    &quot;desc&quot;: &quot;any table, so long as it doesn&#x27;t have a metatable&quot;,
+                    &quot;lua_type&quot;: &quot;table&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;recipe&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(draft: Draft) -&gt; any?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;T\n&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 56,
+                &quot;path&quot;: &quot;src/produce.luau&quot;
+            }
+        },
+        {
             &quot;name&quot;: &quot;original&quot;,
             &quot;desc&quot;: &quot;Returns the original table. You can use this to opt out of Immut for any\ntable, like in cases where it may be more performant to use another method.&quot;,
             &quot;params&quot;: [
@@ -307,6 +285,28 @@
                 &quot;line&quot;: 12,
                 &quot;path&quot;: &quot;src/original.luau&quot;
             }
+        },
+        {
+            &quot;name&quot;: &quot;createDraft&quot;,
+            &quot;desc&quot;: &quot;:::tip\nIt&#x27;s unlikely you&#x27;ll need to use this unless you have a very specific use\ncase. Try using `produce` instead!\n:::\n\nCreate a new draft from the given table.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;base&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;table&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Draft&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 31,
+                &quot;path&quot;: &quot;src/Draft.luau&quot;
+            }
         }
     ],
     &quot;properties&quot;: [],
@@ -318,7 +318,7 @@
         &quot;path&quot;: &quot;src/init.luau&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#createDraft" class="table-of-contents__link toc-highlight">.createDraft</a></li><li><a href="#current" class="table-of-contents__link toc-highlight">.current</a></li><li><a href="#finishDraft" class="table-of-contents__link toc-highlight">.finishDraft</a></li><li><a href="#insert" class="table-of-contents__link toc-highlight">.insert</a></li><li><a href="#isDraft" class="table-of-contents__link toc-highlight">.isDraft</a></li><li><a href="#isDraftable" class="table-of-contents__link toc-highlight">.isDraftable</a></li><li><a href="#original" class="table-of-contents__link toc-highlight">.original</a></li><li><a href="#produce" class="table-of-contents__link toc-highlight">.produce</a></li><li><a href="#remove" class="table-of-contents__link toc-highlight">.remove</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 SolarHorizon. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/immut/assets/js/runtime~main.f97740b6.js"></script>
-<script src="/immut/assets/js/main.0b8aac23.js"></script>
+<script src="/immut/assets/js/runtime~main.755f035d.js"></script>
+<script src="/immut/assets/js/main.1275ad3e.js"></script>
 </body>
 </html>
