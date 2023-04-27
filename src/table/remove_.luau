@@ -8,11 +8,12 @@ local getClone = require(script.Parent.Parent.getClone)
 	Draft-safe replacement for `table.remove`
 ]=]
 local function remove<V>(draft: { V }, number: number?): V?
-	assert(isDraft(draft), "Immut.remove can only be used on drafts")
+	local t = draft
+	if isDraft(draft) then
+		t = getClone(draft :: any)
+	end
 
-	local clone = getClone(draft :: any)
-
-	return table.remove(clone :: any, number)
+	return table.remove(t :: any, number)
 end
 
 return remove
