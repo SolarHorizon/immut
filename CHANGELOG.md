@@ -5,6 +5,7 @@
 - Added `table.sort`
 - Added `table.clear`
 - Added `makeDraftSafe`
+- Fixed Draft iterator not returning drafted versions of nested tables
 
 ## 0.3.2
 
