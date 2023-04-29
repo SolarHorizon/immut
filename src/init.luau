@@ -10,7 +10,7 @@ local isDraft = require(script.isDraft)
 local isDraftable = require(script.isDraftable)
 local original = require(script.original)
 local produce = require(script.produce)
-local tableLib = require(script.table)
+local table = require(script.table)
 
 return {
 	createDraft = Draft.new,
@@ -20,6 +20,5 @@ return {
 	isDraftable = isDraftable,
 	original = original,
 	produce = produce,
-	remove = tableLib.remove,
-	insert = tableLib.insert,
+	table = table,
 }
