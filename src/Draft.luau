@@ -57,8 +57,20 @@ function Draft:__len()
 	return #(rawget(self, CLONE) or rawget(self, BASE))
 end
 
+function _next(self, last)
+	local target = rawget(self, CLONE) or rawget(self, BASE)
+
+	local key: any? = next(target, last)
+
+	if key == nil then
+		return nil
+	end
+
+	return key, self[key]
+end
+
 function Draft:__iter()
-	return next, rawget(self, CLONE) or rawget(self, BASE)
+	return _next, self
 end
 
 return Draft
