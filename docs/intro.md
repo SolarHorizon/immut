@@ -128,7 +128,6 @@ it doesn't need to.
   be what you want. To remedy this, you can opt out of using a draft with
   `Immut.original`.
 
-- Luau's `table` library does not respect metatables. If you want to use
-  `table.insert` and `table.remove`, Immut comes with `Immut.insert` and
-  `Immut.remove`, which are draft-safe alternatives that offer the same
-  functionality.
+- Functions from Luau's built-in table library do not respect metatables. If
+  you want to use them, Immut comes with `Immut.table` which offers some
+  draft-safe replacements with the same functionality.

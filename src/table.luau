@@ -20,8 +20,8 @@ local makeDraftSafe = require(script.Parent.makeDraftSafe)
 	@within table
 	@function remove
 	@param t { V }
-	@param pos number
-	@return V
+	@param pos number?
+	@return V?
 
 	https://create.roblox.com/docs/reference/engine/libraries/table#remove
 ]=]
