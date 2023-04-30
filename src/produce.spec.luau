@@ -57,7 +57,7 @@ return function()
 		expect(new).to.equal(nil)
 	end)
 
-	it("should accept non-draftable base", function()
+	it("should accept non-table non-draftable base", function()
 		expect(function()
 			produce(1, function() end)
 		end).to.never.throw()
@@ -75,7 +75,7 @@ return function()
 		end).to.never.throw()
 	end)
 
-	it("should be able to return non-draftable values", function()
+	it("should be able to return non-table non-draftable values", function()
 		do
 			local new = produce(nil, function() end)
 			expect(new).to.equal(nil)
