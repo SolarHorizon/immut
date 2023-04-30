@@ -11,6 +11,7 @@ local isDraftable = require(script.isDraftable)
 local original = require(script.original)
 local produce = require(script.produce)
 local table = require(script.table)
+local None = require(script.None)
 
 return {
 	createDraft = Draft.new,
@@ -21,4 +22,5 @@ return {
 	original = original,
 	produce = produce,
 	table = table,
+	None = None,
 }

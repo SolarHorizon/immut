@@ -2,26 +2,13 @@ return function()
 	local Draft = require(script.Parent.Draft)
 	local finishDraft = require(script.Parent.finishDraft)
 
-	it("should never accept a value that is not a draft", function()
-		expect(function()
-			finishDraft({})
-		end).to.throw()
-
-		expect(function()
-			finishDraft(1)
-		end).to.throw()
-
-		expect(function()
-			finishDraft("foo")
-		end).to.throw()
-
-		expect(function()
-			finishDraft(false)
-		end).to.throw()
-
-		expect(function()
-			finishDraft(Draft.new({}))
-		end).to.be.ok()
+	it("should return the given value when it is not a draft", function()
+		local base = {}
+		expect(finishDraft(base)).to.equal(base)
+		expect(finishDraft(1)).to.equal(1)
+		expect(finishDraft("foo")).to.equal("foo")
+		expect(finishDraft(false)).to.equal(false)
+		expect(finishDraft(nil)).to.equal(nil)
 	end)
 
 	it("should return the original table when the given draft was not modified", function()
