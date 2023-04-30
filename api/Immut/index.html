@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v2.3.1">
 <title data-rh="true">Immut | Immut</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://SolarHorizon.github.io/immut/api/Immut"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Immut | Immut"><meta data-rh="true" name="description" content="An immutable data library based on Immer.js"><meta data-rh="true" property="og:description" content="An immutable data library based on Immer.js"><link data-rh="true" rel="canonical" href="https://SolarHorizon.github.io/immut/api/Immut"><link data-rh="true" rel="alternate" href="https://SolarHorizon.github.io/immut/api/Immut" hreflang="en"><link data-rh="true" rel="alternate" href="https://SolarHorizon.github.io/immut/api/Immut" hreflang="x-default"><link rel="stylesheet" href="/immut/assets/css/styles.9b3dbd17.css">
-<link rel="preload" href="/immut/assets/js/runtime~main.dda84999.js" as="script">
-<link rel="preload" href="/immut/assets/js/main.e79e8213.js" as="script">
+<link rel="preload" href="/immut/assets/js/runtime~main.bcea0051.js" as="script">
+<link rel="preload" href="/immut/assets/js/main.dbdc06f1.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -71,7 +71,7 @@
   Finalize a draft. When given <a href="/immut/api/Immut#None"><code>None</code></a>, returns <code>nil</code>. When
   given a non-draft value, returns that value.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="produce"><code style="text-decoration:none">produce</code><a href="#produce" class="hash-link" aria-label="Direct link to produce" title="Direct link to produce">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/produce.luau#L61"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">produce</code><code>(</code><div class="inset_uKQm"><div><code>base<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/table">table</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="produce"><code style="text-decoration:none">produce</code><a href="#produce" class="hash-link" aria-label="Direct link to produce" title="Direct link to produce">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/produce.luau#L62"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">produce</code><code>(</code><div class="inset_uKQm"><div><code>base<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/table">table</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>any table, so long as it doesn't have a metatable</p>
 </span></span></div><div><code>recipe<!-- -->: </code><code class="purple_ieR2">(</code><code>draft<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">any?</code></div></div><code>) → </code><code class="blue_P4bS">T?</code></div><div>
 <p>
@@ -275,7 +275,7 @@
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 61,
+                &quot;line&quot;: 62,
                 &quot;path&quot;: &quot;src/produce.luau&quot;
             }
         },
@@ -347,7 +347,7 @@
         &quot;path&quot;: &quot;src/init.luau&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#None" class="table-of-contents__link toc-highlight">None</a></li><li><a href="#nothing" class="table-of-contents__link toc-highlight">nothing</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#createDraft" class="table-of-contents__link toc-highlight">.createDraft</a></li><li><a href="#current" class="table-of-contents__link toc-highlight">.current</a></li><li><a href="#finishDraft" class="table-of-contents__link toc-highlight">.finishDraft</a></li><li><a href="#isDraft" class="table-of-contents__link toc-highlight">.isDraft</a></li><li><a href="#isDraftable" class="table-of-contents__link toc-highlight">.isDraftable</a></li><li><a href="#makeDraftSafe" class="table-of-contents__link toc-highlight">.makeDraftSafe</a></li><li><a href="#original" class="table-of-contents__link toc-highlight">.original</a></li><li><a href="#produce" class="table-of-contents__link toc-highlight">.produce</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 SolarHorizon. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/immut/assets/js/runtime~main.dda84999.js"></script>
-<script src="/immut/assets/js/main.e79e8213.js"></script>
+<script src="/immut/assets/js/runtime~main.bcea0051.js"></script>
+<script src="/immut/assets/js/main.dbdc06f1.js"></script>
 </body>
 </html>
