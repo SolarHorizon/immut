@@ -16,32 +16,37 @@ local CLONE = constants.CLONE
 
 --[=[
 	@within Immut
-	@param draft Draft
-	@return table
+	@param draft T
+	@return T?
 
 	:::tip
 	It's unlikely you'll need to use this unless you have a very specific use
 	case. Try using `produce` instead!
 	:::
 
-	Finalize a draft.
+	Finalize a draft. When given [`None`](/api/Immut#None), returns `nil`. When
+	given a non-draft value, returns that value.
 ]=]
-local function finishDraft<T>(draft: T)
-	assert(isDraft(draft), "Immut.finishDraft should only be called on drafts")
-
-	local final = rawget(draft :: any, CLONE)
-
-	if final == nil then
-		return rawget(draft :: any, BASE)
+local function finishDraft<T>(draft: T): T
+	if typeof(draft) ~= "table" then
+		return draft
 	end
 
-	for key, value in final do
-		if isDraft(value) then
-			final[key] = finishDraft(value)
+	local final = draft
+
+	if isDraft(draft) then
+		final = rawget(draft, CLONE)
+
+		if final == nil then
+			return rawget(draft, BASE)
 		end
 	end
 
-	return final :: T
+	for key, value in final do
+		final[key] = finishDraft(value)
+	end
+
+	return final
 end
 
 return finishDraft

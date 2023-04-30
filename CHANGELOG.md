@@ -6,6 +6,8 @@
 - Added `table.clear`
 - Added `makeDraftSafe`
 - Fixed Draft iterator not returning drafted versions of nested tables
+- `produce` will now finalize any drafts found in non-draft table return values
+- Added `None`
 
 ## 0.3.2
 

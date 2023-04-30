@@ -1,5 +1,6 @@
 --!nocheck
 return function()
+	local None = require(script.Parent.None)
 	local produce = require(script.Parent.produce)
 
 	it("should not mutate the original table", function()
@@ -37,7 +38,7 @@ return function()
 		expect(original.nested.nestedDeep.modified).to.never.be.ok()
 	end)
 
-	it("should return the return value of the recipe when not nil", function()
+	it("should return the return value of the recipe when not nil or None", function()
 		local override = { foo = true }
 
 		local new = produce({}, function(_draft)
@@ -46,5 +47,13 @@ return function()
 
 		expect(new.foo).to.equal(true)
 		expect(new).to.equal(override)
+	end)
+
+	it("should return nil when the return value of the recipe is None", function()
+		local new = produce({}, function(_draft)
+			return None
+		end)
+
+		expect(new).to.equal(nil)
 	end)
 end
