@@ -1,3 +1,7 @@
+## 0.4.2
+
+- `produce` now allows all values except tables with metatables as a base
+
 ## 0.4.1
 
 - Added `nothing` as an alias for `None`
