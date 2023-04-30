@@ -1,4 +1,4 @@
-## Unreleased
+## 0.4.0
 
 - All table library replacement functions can now use non-draft tables
 - Table library is now found under `Immut.table`
