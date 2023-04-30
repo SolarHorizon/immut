@@ -12,6 +12,14 @@
 	print(new) -- nil
 	```
 ]=]
+
+--[=[
+	@within Immut
+	@prop nothing None
+
+	Alias for [`None`](/api/Immut#None)
+]=]
+
 local None = setmetatable({}, {
 	__tostring = function()
 		return "<Immut.None>"

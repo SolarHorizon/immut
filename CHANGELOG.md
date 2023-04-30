@@ -1,3 +1,7 @@
+## 0.4.1
+
+- Added `nothing` as an alias for `None`
+
 ## 0.4.0
 
 - All table library replacement functions can now use non-draft tables
