@@ -2,6 +2,7 @@
 local Draft = require(script.Parent.Draft)
 local None = require(script.Parent.None)
 local finishDraft = require(script.Parent.finishDraft)
+local isDraftable = require(script.Parent.isDraftable)
 
 -- i've tried two type definitions for recipes, neither of which are that great.
 
@@ -59,7 +60,7 @@ type Recipe<T> = ((draft: T) -> (T? | typeof(None)))
 	```
 ]=]
 local function produce<T>(base: T, recipe: Recipe<T>): T?
-	local proxy = Draft.new(base)
+	local proxy = isDraftable(base) and Draft.new(base) or base :: T
 
 	local nextValue = recipe(proxy) or proxy
 
