@@ -43,10 +43,22 @@ local makeDraftSafe = require(script.Parent.makeDraftSafe)
 	https://create.roblox.com/docs/reference/engine/libraries/table#clear
 ]=]
 
+--[=[
+	@within table
+	@function find
+	@param haystack { V }
+	@param needle V
+	@param init number?
+	@return V?
+
+	https://create.roblox.com/docs/reference/engine/libraries/table#find
+]=]
+
 return {
 	remove = makeDraftSafe(table.remove),
 	sort = makeDraftSafe(table.sort),
 	clear = makeDraftSafe(table.clear),
+	find = makeDraftSafe(table.find),
 
 	-- we cannot preserve the type of table.insert when passing it through
 	-- makeDraftSafe because it is an overloaded function. this workaround
