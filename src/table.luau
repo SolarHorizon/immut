@@ -66,12 +66,26 @@ local makeDraftSafe = require(script.Parent.makeDraftSafe)
 	https://create.roblox.com/docs/reference/engine/libraries/table#concat
 ]=]
 
+--[=[
+	@within table
+	@function move
+	@param src { V }
+	@param a number
+	@param b number
+	@param t number?
+	@param dst { V }?
+	@return { V }
+
+	https://create.roblox.com/docs/reference/engine/libraries/table#move
+]=]
+
 return {
 	remove = makeDraftSafe(table.remove),
 	sort = makeDraftSafe(table.sort),
 	clear = makeDraftSafe(table.clear),
 	find = makeDraftSafe(table.find),
 	concat = makeDraftSafe(table.concat),
+	move = makeDraftSafe(table.move),
 
 	-- we cannot preserve the type of table.insert when passing it through
 	-- makeDraftSafe because it is an overloaded function. this workaround
