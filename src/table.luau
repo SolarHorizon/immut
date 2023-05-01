@@ -49,7 +49,7 @@ local makeDraftSafe = require(script.Parent.makeDraftSafe)
 	@param haystack { V }
 	@param needle V
 	@param init number?
-	@return V?
+	@return number?
 
 	https://create.roblox.com/docs/reference/engine/libraries/table#find
 ]=]
