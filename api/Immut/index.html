@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v2.3.1">
 <title data-rh="true">Immut | Immut</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://SolarHorizon.github.io/immut/api/Immut"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Immut | Immut"><meta data-rh="true" name="description" content="An immutable data library based on Immer.js"><meta data-rh="true" property="og:description" content="An immutable data library based on Immer.js"><link data-rh="true" rel="canonical" href="https://SolarHorizon.github.io/immut/api/Immut"><link data-rh="true" rel="alternate" href="https://SolarHorizon.github.io/immut/api/Immut" hreflang="en"><link data-rh="true" rel="alternate" href="https://SolarHorizon.github.io/immut/api/Immut" hreflang="x-default"><link rel="stylesheet" href="/immut/assets/css/styles.9b3dbd17.css">
-<link rel="preload" href="/immut/assets/js/runtime~main.5116f731.js" as="script">
-<link rel="preload" href="/immut/assets/js/main.e501b73e.js" as="script">
+<link rel="preload" href="/immut/assets/js/runtime~main.f97d4608.js" as="script">
+<link rel="preload" href="/immut/assets/js/main.9dd3f88e.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -27,7 +27,7 @@
   make them draft-safe. <code>makeDraftSafe</code> is only necessary if the function will
   mutate the table. If the unsafe function is only reading from the table
   (using rawget), consider using <a href="/immut/api/Immut#original"><code>original</code></a> or
-  <a href="/immut/api/Immut#current"><code>current</code></a> instead.
+  <a href="/immut/api/Immut#current"><code>current</code></a> instead. Otherwise, you can use <a href="/immut/api/Immut#makeDraftSafeReadonly"><code>makeDraftSafeReadOnly</code></a>.
 </p>
 <p>
   This is used internally to wrap functions within Luau's table library, and
@@ -125,6 +125,24 @@
   Returns the original table. You can use this to opt out of Immut for any
   table, like in cases where it may be more performant to use another method.
 </p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="makeDraftSafeReadOnly"><code style="text-decoration:none">makeDraftSafeReadOnly</code><a href="#makeDraftSafeReadOnly" class="hash-link" aria-label="Direct link to makeDraftSafeReadOnly" title="Direct link to makeDraftSafeReadOnly">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/makeDraftSafeReadOnly.luau#L34"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">makeDraftSafeReadOnly</code><code>(</code><code>fn<!-- -->: </code><code class="blue_P4bS">T</code><code>) → </code><code class="blue_P4bS">T</code></div><div>
+<p>
+  A wrapper for functions that bypass metatables (like using rawget) that will
+  make them draft-safe. <code>makeDraftSafeReadonly</code> should only be used on functions that will
+  not mutate the table.
+</p>
+<p>
+  This is used internally to wrap functions within Luau's table library that only perform read operations, and
+  is exposed for your convenience.
+</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> find <span class="token operator">=</span> <span class="token function">makeDraftSafeReadOnly</span><span class="token punctuation">(</span>table<span class="token punctuation">.</span>find<span class="token punctuation">)</span>
+<span class="token keyword">local</span> concat <span class="token operator">=</span> <span class="token function">makeDraftSafeReadOnly</span><span class="token punctuation">(</span>table<span class="token punctuation">.</span>concat<span class="token punctuation">)</span>
+
+<span class="token keyword">local</span> nextState <span class="token operator">=</span> <span class="token function">produce</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>draft<span class="token punctuation">)</span>
+	<span class="token keyword">local</span> value <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>draft<span class="token punctuation">.</span>a<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">concat</span><span class="token punctuation">(</span>draft<span class="token punctuation">.</span>b<span class="token punctuation">,</span> <span class="token string">","</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span>
+</code></pre>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="createDraft"><code style="text-decoration:none">createDraft</code><a href="#createDraft" class="hash-link" aria-label="Direct link to createDraft" title="Direct link to createDraft">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/SolarHorizon/immut/blob/master/src/Draft.luau#L31"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Immut<!-- -->.</code><code class="green_DgR4">createDraft</code><code>(</code><code>base<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/table">table</a></code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/immut/api/Draft">Draft</a></code></div><div>
 <div class="admonition admonition-tip alert alert--success">
   <div class="admonition-heading">
@@ -144,7 +162,7 @@
     &quot;functions&quot;: [
         {
             &quot;name&quot;: &quot;makeDraftSafe&quot;,
-            &quot;desc&quot;: &quot;A wrapper for functions that bypass metatables (like using rawset) that will\nmake them draft-safe. `makeDraftSafe` is only necessary if the function will \nmutate the table. If the unsafe function is only reading from the table\n(using rawget), consider using [`original`](/api/Immut#original) or \n[`current`](/api/Immut#current) instead.\n\nThis is used internally to wrap functions within Luau&#x27;s table library, and\nis exposed for your convenience.\n\n```lua\nlocal remove = makeDraftSafe(table.remove)\nlocal insert = makeDraftSafe(table.insert)\n\nlocal nextState = produce(state, function(draft)\n\tlocal value = remove(draft.a, 1)\n\tinsert(draft.b, 1, value)\nend)\n```&quot;,
+            &quot;desc&quot;: &quot;A wrapper for functions that bypass metatables (like using rawset) that will\nmake them draft-safe. `makeDraftSafe` is only necessary if the function will \nmutate the table. If the unsafe function is only reading from the table\n(using rawget), consider using [`original`](/api/Immut#original) or \n[`current`](/api/Immut#current) instead. Otherwise, you can use [`makeDraftSafeReadOnly`](/api/Immut#makeDraftSafeReadonly).\n\nThis is used internally to wrap functions within Luau&#x27;s table library, and\nis exposed for your convenience.\n\n```lua\nlocal remove = makeDraftSafe(table.remove)\nlocal insert = makeDraftSafe(table.insert)\n\nlocal nextState = produce(state, function(draft)\n\tlocal value = remove(draft.a, 1)\n\tinsert(draft.b, 1, value)\nend)\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;fn&quot;,
@@ -297,6 +315,28 @@
             }
         },
         {
+            &quot;name&quot;: &quot;makeDraftSafeReadOnly&quot;,
+            &quot;desc&quot;: &quot;A wrapper for functions that bypass metatables (like using rawget) that will\nmake them draft-safe. `makeDraftSafeReadonly` should only be used on functions that will \nnot mutate the table.\n\nThis is used internally to wrap functions within Luau&#x27;s table library that only perform read operations, and\nis exposed for your convenience.\n\n```lua\nlocal find = makeDraftSafeReadOnly(table.find)\nlocal concat = makeDraftSafeReadOnly(table.concat)\n\nlocal nextState = produce(state, function(draft)\n\tlocal value = find(draft.a, 1)\n\tprint(concat(draft.b, \&quot;,\&quot;)\nend)\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;fn&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 34,
+                &quot;path&quot;: &quot;src/makeDraftSafeReadOnly.luau&quot;
+            }
+        },
+        {
             &quot;name&quot;: &quot;createDraft&quot;,
             &quot;desc&quot;: &quot;:::tip\nIt&#x27;s unlikely you&#x27;ll need to use this unless you have a very specific use\ncase. Try using `produce` instead!\n:::\n\nCreate a new draft from the given table.&quot;,
             &quot;params&quot;: [
@@ -346,8 +386,8 @@
         &quot;line&quot;: 6,
         &quot;path&quot;: &quot;src/init.luau&quot;
     }
-}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#None" class="table-of-contents__link toc-highlight">None</a></li><li><a href="#nothing" class="table-of-contents__link toc-highlight">nothing</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#createDraft" class="table-of-contents__link toc-highlight">.createDraft</a></li><li><a href="#current" class="table-of-contents__link toc-highlight">.current</a></li><li><a href="#finishDraft" class="table-of-contents__link toc-highlight">.finishDraft</a></li><li><a href="#isDraft" class="table-of-contents__link toc-highlight">.isDraft</a></li><li><a href="#isDraftable" class="table-of-contents__link toc-highlight">.isDraftable</a></li><li><a href="#makeDraftSafe" class="table-of-contents__link toc-highlight">.makeDraftSafe</a></li><li><a href="#original" class="table-of-contents__link toc-highlight">.original</a></li><li><a href="#produce" class="table-of-contents__link toc-highlight">.produce</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 SolarHorizon. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/immut/assets/js/runtime~main.5116f731.js"></script>
-<script src="/immut/assets/js/main.e501b73e.js"></script>
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#None" class="table-of-contents__link toc-highlight">None</a></li><li><a href="#nothing" class="table-of-contents__link toc-highlight">nothing</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#createDraft" class="table-of-contents__link toc-highlight">.createDraft</a></li><li><a href="#current" class="table-of-contents__link toc-highlight">.current</a></li><li><a href="#finishDraft" class="table-of-contents__link toc-highlight">.finishDraft</a></li><li><a href="#isDraft" class="table-of-contents__link toc-highlight">.isDraft</a></li><li><a href="#isDraftable" class="table-of-contents__link toc-highlight">.isDraftable</a></li><li><a href="#makeDraftSafe" class="table-of-contents__link toc-highlight">.makeDraftSafe</a></li><li><a href="#makeDraftSafeReadOnly" class="table-of-contents__link toc-highlight">.makeDraftSafeReadOnly</a></li><li><a href="#original" class="table-of-contents__link toc-highlight">.original</a></li><li><a href="#produce" class="table-of-contents__link toc-highlight">.produce</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 SolarHorizon. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+<script src="/immut/assets/js/runtime~main.f97d4608.js"></script>
+<script src="/immut/assets/js/main.9dd3f88e.js"></script>
 </body>
 </html>
