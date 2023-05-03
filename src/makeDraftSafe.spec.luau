@@ -15,4 +15,16 @@ return function()
 		expect(rawget(draft, "foo")).to.never.be.ok()
 		expect(draft.foo).to.equal("bar")
 	end)
+
+	it("should allow non-drafts in the returned draft-safe function", function()
+		local nonDraft = {}
+
+		local safe = makeDraftSafe(table.insert)
+
+		expect(function()
+			safe(nonDraft, "foo")
+		end).to.never.throw()
+		
+		expect(nonDraft[1]).to.equal("foo")
+	end)
 end

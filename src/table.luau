@@ -1,4 +1,5 @@
 local makeDraftSafe = require(script.Parent.makeDraftSafe)
+local makeDraftSafeReadOnly = require(script.Parent.makeDraftSafeReadOnly)
 
 --[=[
 	@class table
@@ -43,10 +44,35 @@ local makeDraftSafe = require(script.Parent.makeDraftSafe)
 	https://create.roblox.com/docs/reference/engine/libraries/table#clear
 ]=]
 
+--[=[
+	@within table
+	@function find
+	@param haystack { V }
+	@param needle V
+	@param init number?
+	@return number?
+
+	https://create.roblox.com/docs/reference/engine/libraries/table#find
+]=]
+
+--[=[
+	@within table
+	@function concat
+	@param t { V }
+	@param sep string?
+	@param i number?
+	@param j number?
+	@return string
+
+	https://create.roblox.com/docs/reference/engine/libraries/table#concat
+]=]
+
 return {
 	remove = makeDraftSafe(table.remove),
 	sort = makeDraftSafe(table.sort),
 	clear = makeDraftSafe(table.clear),
+	find = makeDraftSafeReadOnly(table.find),
+	concat = makeDraftSafeReadOnly(table.concat),
 
 	-- we cannot preserve the type of table.insert when passing it through
 	-- makeDraftSafe because it is an overloaded function. this workaround
@@ -54,4 +80,5 @@ return {
 	insert = (makeDraftSafe(table.insert) :: any) :: typeof(table.insert),
 
 	makeDraftSafe = makeDraftSafe,
+	makeDraftSafeReadOnly = makeDraftSafeReadOnly,
 }

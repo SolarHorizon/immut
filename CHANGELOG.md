@@ -1,3 +1,9 @@
+## Unreleased changes
+
+- Added `makeDraftSafeReadOnly`
+- Added `table.find`
+- Added `table.concat`
+
 ## 0.4.2
 
 - `produce` now allows all values except tables with metatables as a base
