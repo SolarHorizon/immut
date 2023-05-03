@@ -10,11 +10,14 @@ return function()
 
 		local safe = makeDraftSafeReadOnly(unsafe)
 
-		local draft = Draft.new({})
-		local foo = {}
-		draft.foo = foo -- new index that the unsafe fn, unsafe(draft, "foo"), would not find
+		local original = { foo = {} }
+		local draft = Draft.new(original)
+		
+		local bar = {}
+		draft.bar = bar
 
-		expect(safe(draft, "foo")).to.equal(foo)
+		expect(safe(draft, "foo")).to.equal(original.foo)
+		expect(safe(draft, "bar")).to.equal(bar)
 	end)
 
 	it("should return a function that does not create a clone of the draft", function()
