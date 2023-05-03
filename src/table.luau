@@ -67,19 +67,6 @@ local makeDraftSafeReadOnly = require(script.Parent.makeDraftSafeReadOnly)
 	https://create.roblox.com/docs/reference/engine/libraries/table#concat
 ]=]
 
---[=[
-	@within table
-	@function move
-	@param src { V }
-	@param a number
-	@param b number
-	@param t number?
-	@param dst { V }?
-	@return { V }
-
-	https://create.roblox.com/docs/reference/engine/libraries/table#move
-]=]
-
 return {
 	remove = makeDraftSafe(table.remove),
 	sort = makeDraftSafe(table.sort),
