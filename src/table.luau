@@ -86,7 +86,6 @@ return {
 	clear = makeDraftSafe(table.clear),
 	find = makeDraftSafeReadOnly(table.find),
 	concat = makeDraftSafeReadOnly(table.concat),
-	move = makeDraftSafeReadOnly(table.move),
 
 	-- we cannot preserve the type of table.insert when passing it through
 	-- makeDraftSafe because it is an overloaded function. this workaround
