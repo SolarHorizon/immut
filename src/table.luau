@@ -1,4 +1,5 @@
 local makeDraftSafe = require(script.Parent.makeDraftSafe)
+local makeDraftSafeReadOnly = require(script.Parent.makeDraftSafeReadOnly)
 
 --[=[
 	@class table
@@ -83,9 +84,9 @@ return {
 	remove = makeDraftSafe(table.remove),
 	sort = makeDraftSafe(table.sort),
 	clear = makeDraftSafe(table.clear),
-	find = makeDraftSafe(table.find),
-	concat = makeDraftSafe(table.concat),
-	move = makeDraftSafe(table.move),
+	find = makeDraftSafeReadOnly(table.find),
+	concat = makeDraftSafeReadOnly(table.concat),
+	move = makeDraftSafeReadOnly(table.move),
 
 	-- we cannot preserve the type of table.insert when passing it through
 	-- makeDraftSafe because it is an overloaded function. this workaround
@@ -93,4 +94,5 @@ return {
 	insert = (makeDraftSafe(table.insert) :: any) :: typeof(table.insert),
 
 	makeDraftSafe = makeDraftSafe,
+	makeDraftSafeReadOnly = makeDraftSafeReadOnly,
 }

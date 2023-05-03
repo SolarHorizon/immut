@@ -15,7 +15,7 @@ type Mutator<K, V, Args..., Return...> = (draft: Draft<K, V>, Args...) -> Return
 	make them draft-safe. `makeDraftSafe` is only necessary if the function will 
 	mutate the table. If the unsafe function is only reading from the table
 	(using rawget), consider using [`original`](/api/Immut#original) or 
-	[`current`](/api/Immut#current) instead.
+	[`current`](/api/Immut#current) instead. Otherwise, you can use [`makeDraftSafeReadOnly`](/api/Immut#makeDraftSafeReadonly).
 
 	This is used internally to wrap functions within Luau's table library, and
 	is exposed for your convenience.
