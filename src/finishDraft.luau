@@ -1,3 +1,4 @@
+--!strict
 local isDraft = require(script.Parent.isDraft)
 local constants = require(script.Parent.constants)
 
@@ -12,6 +13,25 @@ local CLONE = constants.CLONE
 
 	Returns a snapshot of the current state of a draft. This can be expensive,
 	so use it sparingly.
+
+	This function is identical to [`finishDraft`](/api/Immut#finishDraft). It's
+	possible that this could change, though, so you should prefer `current` when
+	writing producers.
+
+	## Example
+
+	```lua
+	local state = {}
+
+	local newState = produce(state, function(draft)
+		draft.foo = "bar"
+
+		print(current(draft)) -- prints { foo = "bar" }
+
+		draft.foo = "baz"
+
+		print(current(draft)) -- prints { foo = "baz" }
+	end)
 ]=]
 
 --[=[
@@ -20,14 +40,14 @@ local CLONE = constants.CLONE
 	@return T?
 
 	:::tip
-	It's unlikely you'll need to use this unless you have a very specific use
-	case. Try using `produce` instead!
+	This function is used internally. If you need the same functionality 
+	`finishDraft` provides, consider using [`current`](/api/Immut#current).
 	:::
 
 	Finalize a draft. When given [`None`](/api/Immut#None), returns `nil`. When
 	given a non-draft value, returns that value.
 ]=]
-local function finishDraft<T>(draft: T): T
+local function finishDraft<T>(draft: T): T?
 	if typeof(draft) ~= "table" then
 		return draft
 	end

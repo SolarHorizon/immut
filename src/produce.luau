@@ -11,7 +11,7 @@ local isDraftable = require(script.Parent.isDraftable)
 
 -- when using this type, recipes will always need to explicitly return something.
 -- `draft` autocompletion works though, so i think this is better, but not ideal.
-type Recipe<T> = ((draft: T) -> (T? | typeof(None)))
+type Recipe<T> = (draft: T) -> (T? | typeof(None))
 
 --[=[
 	@within Immut
@@ -49,8 +49,8 @@ type Recipe<T> = ((draft: T) -> (T? | typeof(None)))
 	value will be used instead of the draft.
 
 	:::tip
-	When in strict mode, recipes do need an explicit return. You can simply
-	return the draft or nil to avoid type errors.
+	When in strict typechecking mode, recipes do need an explicit return. You 
+	can simply return the draft or nil to avoid type errors.
 	:::
 
 	```lua
@@ -60,9 +60,9 @@ type Recipe<T> = ((draft: T) -> (T? | typeof(None)))
 	```
 ]=]
 local function produce<T>(base: T, recipe: Recipe<T>): T?
-	local proxy = isDraftable(base) and Draft.new(base) or base :: T
+	local proxy = isDraftable(base) and Draft.new(base) or base
 
-	local nextValue = recipe(proxy) or proxy
+	local nextValue = recipe(proxy :: T) or proxy
 
 	if nextValue == None then
 		return nil

@@ -6,7 +6,8 @@ local BASE = constants.BASE
 local CLONE = constants.CLONE
 
 --[=[
-	@class Draft
+	@within Immut
+	@type Draft Draft<T>
 
 	Drafts are the backbone of Immut. They allow you to interact with a table
 	in a way which would normally mutate it, but immutably. Internally, a draft

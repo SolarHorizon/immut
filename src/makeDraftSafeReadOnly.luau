@@ -5,11 +5,11 @@ local isDraft = require(script.Parent.isDraft)
 local BASE = constants.BASE
 local CLONE = constants.CLONE
 
-type Draft<K, V> = { [K]: V }
-type Mutator<K, V, Args..., Return...> = (draft: Draft<K, V>, Args...) -> Return...
+type Draft<K = any, V = any> = { [K]: V }
+type Mutator<Args..., Return...> = (draft: Draft, Args...) -> Return...
 
 --[=[
-	@within Immut
+	@within table
 	@function makeDraftSafeReadOnly
 	@param fn T
 	@return T
@@ -31,7 +31,7 @@ type Mutator<K, V, Args..., Return...> = (draft: Draft<K, V>, Args...) -> Return
 	end)
 	```
 ]=]
-local function makeDraftSafeReadOnly<K, V, Args..., Return...>(fn: Mutator<K, V, Args..., Return...>): Mutator<K, V, Args..., Return...>
+local function makeDraftSafeReadOnly<Args..., Return...>(fn: Mutator<Args..., Return...>): Mutator<Args..., Return...>
 	return function(draft, ...)
 		local t = draft
 
