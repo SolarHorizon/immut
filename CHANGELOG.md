@@ -1,4 +1,4 @@
-## Unreleased changes
+## 0.4.3
 
 - Added `makeDraftSafeReadOnly`
 - Added `table.find`
