@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[726],{7636:e=>{e.exports=JSON.parse('[{"type":"link","href":"/api/Immut","label":"\u200bImmut"},{"type":"link","href":"/api/table","label":"table"}]')}}]);
