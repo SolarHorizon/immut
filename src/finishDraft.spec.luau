@@ -32,4 +32,12 @@ return function()
 		expect(finished.foo).to.equal(true)
 		expect(finished.bar).to.equal(true)
 	end)
+
+	it("should not mutate non-draft tables", function()
+		local original = table.freeze({ foo = true })
+
+		expect(function()
+			finishDraft(original)
+		end).to.never.throw()
+	end)
 end

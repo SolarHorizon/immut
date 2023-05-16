@@ -1,3 +1,7 @@
+## 0.4.4
+
+- Fixed `finishDraft` mutating non-draft tables
+
 ## 0.4.3
 
 - Added `makeDraftSafeReadOnly`

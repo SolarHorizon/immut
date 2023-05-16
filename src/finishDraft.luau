@@ -48,18 +48,14 @@ local CLONE = constants.CLONE
 	given a non-draft value, returns that value.
 ]=]
 local function finishDraft<T>(draft: T): T?
-	if typeof(draft) ~= "table" then
+	if typeof(draft) ~= "table" or not isDraft(draft) then
 		return draft
 	end
 
-	local final = draft
+	local final = rawget(draft, CLONE)
 
-	if isDraft(draft) then
-		final = rawget(draft, CLONE)
-
-		if final == nil then
-			return rawget(draft, BASE)
-		end
+	if final == nil then
+		return rawget(draft, BASE)
 	end
 
 	for key, value in final do
